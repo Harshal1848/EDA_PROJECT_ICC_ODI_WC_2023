@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDA Report: ICC Men's ODI World Cup 2023</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a237e;
+            --secondary: #0d47a1;
+            --accent: #ffab00;
+            --bg: #f5f7fa;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --text: #333;
+            --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            margin-bottom: 40px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 10px; }
+        h2 { font-size: 1.8rem; color: var(--primary); margin-bottom: 20px; border-left: 5px solid var(--accent); padding-left: 15px; }
+
+        .team-info {
+            background: var(--card-bg);
+            backdrop-filter: blur(4px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-top: -80px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .team-member { text-align: center; padding: 10px; }
+        .team-member strong { display: block; font-size: 1.2rem; }
+        .team-member span { color: #666; font-size: 0.9rem; }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: var(--bg);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        img.viz {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .objective-list { list-style: none; }
+        .objective-list li::before { content: "🎯"; margin-right: 10px; }
+
+        footer {
+            text-align: center;
+            color: #888;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+
+        .badge {
+            background: var(--accent);
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <span class="badge">EDA PROJECT 2025-26</span>
+        <h1>ICC Men's ODI World Cup 2023</h1>
+        <p>Comprehensive Exploratory Data Analysis & Visualization</p>
+        <p style="margin-top: 15px; font-weight: 300; opacity: 0.9;">Deogiri College (Autonomous), Chhatrapati Sambhajinagar</p>
+    </div>
+</header>
+
+<div class="container">
+    <div class="team-info">
+        <div class="team-member">
+            <strong>LAKDE AMEY L.</strong>
+            <span>Roll: 2025/MCA/078</span>
+        </div>
+        <div class="team-member">
+            <strong>MAHAJAN HARSHAL R.</strong>
+            <span>Roll: 2025/MCA/083</span>
+        </div>
+        <div class="team-member">
+            <strong>MANKE NILESH R.</strong>
+            <span>Roll: 2025/MCA/084</span>
+        </div>
+    </div>
+
+    <section class="card">
+        <h2>Tournament Highlights</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3 style="color: var(--primary); font-size: 2.5rem;">24,312</h3>
+                <p>Total Runs Scored</p>
+            </div>
+            <div class="stat-card">
+                <h3 style="color: var(--primary); font-size: 2.5rem;">706</h3>
+                <p>Total Wickets Taken</p>
+            </div>
+            <div class="stat-card">
+                <h3 style="color: var(--primary); font-size: 2.5rem;">2,885</h3>
+                <p>Total Boundaries</p>
+            </div>
+            <div class="stat-card">
+                <h3 style="color: var(--primary); font-size: 2.5rem;">1,182</h3>
+                <p>Extra Runs</p>
+            </div>
+        </div>
+        <div class="stats-grid">
+            <div>
+                <img src="report_assets/runs_distribution.png" alt="Runs Distribution" class="viz">
+                <p style="text-align: center; margin-top: 10px; font-size: 0.9rem; color: #666;">Batting Runs vs Extras</p>
+            </div>
+            <div>
+                <img src="report_assets/boundaries_distribution.png" alt="Boundaries Distribution" class="viz">
+                <p style="text-align: center; margin-top: 10px; font-size: 0.9rem; color: #666;">Fours vs Sixes Ratio</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Project Overview</h2>
+        <p>This report presents an in-depth analysis of the 2023 ICC World Cup. By processing raw match and ball-by-ball data, we've extracted meaningful insights into team strategies, player performances, and tournament dynamics.</p>
+        <div style="margin-top: 20px;">
+            <h3>Key Datasets</h3>
+            <ul style="margin-left: 20px;">
+                <li><strong>matches .csv</strong>: Match summaries, venues, and winners.</li>
+                <li><strong>deliveries.csv</strong>: Detailed ball-by-ball analysis.</li>
+                <li><strong>points_table.csv</strong>: Tournament standings.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Tournament Standings & Team Efficiency</h2>
+        <p>The points table reflects the dominance of top teams. India led the table with a perfect winning record. However, Net Run Rate (NRR) reveals the slim margins between other top contenders.</p>
+        <div class="stats-grid">
+            <div>
+                <img src="report_assets/points_table.png" alt="Points Table" class="viz">
+            </div>
+            <div>
+                <img src="report_assets/nrr_distribution.png" alt="NRR Distribution" class="viz">
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Batting Performance</h2>
+        <p>Analysis of high-scoring innings and total runs reveals the tournament's top consistent performers. Virat Kohli and other top-order batsmen led the subcontinental conditions.</p>
+        <img src="report_assets/top_batsmen.png" alt="Top Batsmen" class="viz">
+    </section>
+
+    <section class="card">
+        <h2>Bowling & Wicket Distribution</h2>
+        <p>Understanding how wickets were taken helps in identifying the effectiveness of various bowling styles. "Caught" remained the most common mode of dismissal.</p>
+        <div class="stats-grid">
+            <div>
+                <img src="report_assets/wicket_types.png" alt="Wicket Types" class="viz">
+            </div>
+            <div>
+                <img src="report_assets/top_bowlers.png" alt="Top Bowlers" class="viz">
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Toss Impact Analysis</h2>
+        <p>Does winning the toss guarantee victory? Our analysis shows a remarkably balanced outcome between batting first and chasing. However, seeing which teams won the most tosses gives insight into captaincy luck during the tournament.</p>
+        <div class="stats-grid">
+            <div>
+                <img src="report_assets/toss_impact.png" alt="Toss Impact" class="viz">
+                <p style="text-align: center; font-size: 0.9rem; color: #666;">Win % by Strategy</p>
+            </div>
+            <div>
+                <img src="report_assets/toss_wins.png" alt="Toss Wins" class="viz">
+                <p style="text-align: center; font-size: 0.9rem; color: #666;">Most Toss Wins by Team</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Conclusion</h2>
+        <p>The 2023 World Cup provided a rich dataset for EDA. Our analysis highlights that while individual brilliance (as seen in player stats) is vital, team consistency (reflected in the points table) and adaptability to chasing or defending are what defined the ultimate champions.</p>
+    </section>
+
+    <footer>
+        <p>Made with Python, Matplotlib & Seaborn | MCA FY 2025-26</p>
+    </footer>
+</div>
+
+</body>
+</html>
